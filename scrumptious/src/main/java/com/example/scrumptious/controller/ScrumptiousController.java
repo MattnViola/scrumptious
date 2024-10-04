@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class ScrumptiousController {
@@ -14,6 +15,11 @@ public class ScrumptiousController {
 		return "greeting";
 	}
 
+	@GetMapping("/projectdebug")
+    @ResponseBody  // This will return the string directly as a response
+    public String project() {
+        return "Hello, World!";
+	}
 	// What do I need to do?
 	// Oauth Login.
 	// A project selection screen after being logged in.
